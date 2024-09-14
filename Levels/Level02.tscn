@@ -1,0 +1,234 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Scenes/Garra.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets PatrulhaColeta/background/PNG/2_game_background/layers/1.png" type="Texture" id=3]
+[ext_resource path="res://Assets PatrulhaColeta/background/PNG/2_game_background/layers/3.png" type="Texture" id=4]
+[ext_resource path="res://Assets PatrulhaColeta/background/PNG/2_game_background/layers/2.png" type="Texture" id=5]
+[ext_resource path="res://Assets PatrulhaColeta/background/PNG/2_game_background/layers/5.png" type="Texture" id=6]
+[ext_resource path="res://Assets PatrulhaColeta/background/PNG/2_game_background/layers/4.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Net2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Pedra01.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Pedra02.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Pedraa.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/HUDLVL2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Trash01.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/TrashPaper.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scripts/HUDLVL2.gd" type="Script" id=15]
+[ext_resource path="res://Prefabs/Transition_in.tscn" type="PackedScene" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1925.5, 10 )
+
+[node name="Level02" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="agua2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/agua2"]
+position = Vector2( 959, 540 )
+texture = ExtResource( 3 )
+
+[node name="pedras" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/pedras"]
+position = Vector2( 959, 540 )
+texture = ExtResource( 5 )
+
+[node name="pedras2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/pedras2"]
+position = Vector2( 959, 540 )
+texture = ExtResource( 4 )
+
+[node name="matos" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/matos"]
+position = Vector2( 959, 540 )
+texture = ExtResource( 7 )
+
+[node name="chao" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/chao"]
+position = Vector2( 959, 540 )
+texture = ExtResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 867, 444 )
+
+[node name="Garra" parent="Player" instance=ExtResource( 1 )]
+position = Vector2( -3.3999, 8.39996 )
+
+[node name="Pedraa" parent="." instance=ExtResource( 11 )]
+position = Vector2( 3354, 847 )
+scale = Vector2( 1.09646, 1.0839 )
+
+[node name="Pedraa2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 5870, 709 )
+scale = Vector2( 1.09646, 1.0839 )
+
+[node name="Pedra02" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2808, 602 )
+scale = Vector2( 1.09646, 1.0839 )
+
+[node name="Pedra04" parent="." instance=ExtResource( 10 )]
+position = Vector2( 6552, 877 )
+scale = Vector2( 0.777613, 0.768705 )
+
+[node name="Pedra12" parent="." instance=ExtResource( 10 )]
+position = Vector2( 9625, 553 )
+scale = Vector2( 2.25584, 2.23 )
+
+[node name="Pedra01" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1491, 762 )
+
+[node name="Pedra03" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4790, 890 )
+scale = Vector2( 3.80677, 3.80677 )
+
+[node name="Pedra05" parent="." instance=ExtResource( 9 )]
+position = Vector2( 5852, 149 )
+rotation = -3.12954
+scale = Vector2( 3.80677, 3.80677 )
+
+[node name="Pedra06" parent="." instance=ExtResource( 9 )]
+position = Vector2( 5403, 135 )
+rotation = -3.12954
+scale = Vector2( 3.80677, 3.80677 )
+
+[node name="Pedra07" parent="." instance=ExtResource( 9 )]
+position = Vector2( 6408, 156 )
+rotation = -3.12954
+scale = Vector2( 3.80677, 3.80677 )
+
+[node name="Pedra08" parent="." instance=ExtResource( 9 )]
+position = Vector2( 7449, 1172 )
+rotation = -3.12954
+scale = Vector2( 3.80677, 3.80677 )
+
+[node name="Pedra09" parent="." instance=ExtResource( 9 )]
+position = Vector2( 8122, 1115 )
+rotation = -3.12954
+scale = Vector2( 3.80677, 3.80677 )
+
+[node name="Pedra10" parent="." instance=ExtResource( 9 )]
+position = Vector2( 8763, 963 )
+rotation = -6.21363
+scale = Vector2( 3.80677, 3.80677 )
+
+[node name="Pedra11" parent="." instance=ExtResource( 9 )]
+position = Vector2( 9411, 1014 )
+rotation = -6.21363
+scale = Vector2( 3.80677, 3.80677 )
+
+[node name="floorLimit" type="StaticBody2D" parent="."]
+position = Vector2( 9, 1096 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="floorLimit"]
+position = Vector2( 1914, -5 )
+shape = SubResource( 1 )
+
+[node name="floorLimit4" type="StaticBody2D" parent="."]
+position = Vector2( 3861, 1096 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="floorLimit4"]
+position = Vector2( 1914, -5 )
+shape = SubResource( 1 )
+
+[node name="floorLimit6" type="StaticBody2D" parent="."]
+position = Vector2( 7712, 1096 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="floorLimit6"]
+position = Vector2( 1914, -5 )
+shape = SubResource( 1 )
+
+[node name="collision2" type="CollisionShape2D" parent="floorLimit6"]
+position = Vector2( 1914, -5 )
+rotation = 1.56225
+shape = SubResource( 1 )
+
+[node name="floorLimit7" type="StaticBody2D" parent="."]
+position = Vector2( 7712, 7 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="floorLimit7"]
+position = Vector2( 1914, -5 )
+shape = SubResource( 1 )
+
+[node name="floorLimit5" type="StaticBody2D" parent="."]
+position = Vector2( 3861, 7 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="floorLimit5"]
+position = Vector2( 1914, -5 )
+shape = SubResource( 1 )
+
+[node name="floorLimit3" type="StaticBody2D" parent="."]
+position = Vector2( 2, -1328 )
+rotation = 1.57395
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="floorLimit3"]
+position = Vector2( 1914, -5 )
+shape = SubResource( 1 )
+
+[node name="floorLimit2" type="StaticBody2D" parent="."]
+position = Vector2( 10, 8 )
+scale = Vector2( 1.01246, 1.00721 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="floorLimit2"]
+position = Vector2( 1914, -5 )
+shape = SubResource( 1 )
+
+[node name="Trash01" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1211, 824 )
+rotation = 1.44631
+scale = Vector2( 3.18426, 3.16775 )
+
+[node name="Trash02" parent="." instance=ExtResource( 13 )]
+position = Vector2( 2578, 824 )
+rotation = 0.768631
+scale = Vector2( 3.18426, 3.16775 )
+
+[node name="TrashPaper" parent="." instance=ExtResource( 14 )]
+position = Vector2( 5856, 990 )
+scale = Vector2( 2.56, 2.56 )
+
+[node name="TrashPaper2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 6644, 676 )
+scale = Vector2( 3.48758, 3.48758 )
+
+[node name="TrashPaper3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 8242, 841 )
+scale = Vector2( 3.48758, 3.48758 )
+
+[node name="Net2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 522, 180 )
+scale = Vector2( 1.1633, 1.1633 )
+
+[node name="HUDLVL2" parent="." instance=ExtResource( 12 )]
+script = ExtResource( 15 )
+
+[node name="Transition_in" parent="." instance=ExtResource( 16 )]
+
+[connection signal="body_entered" from="Net2" to="Player/Garra" method="_on_Net2_body_entered"]
+[connection signal="body_exited" from="Net2" to="Net2" method="_on_Net2_body_exited"]

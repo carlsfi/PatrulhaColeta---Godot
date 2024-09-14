@@ -1,0 +1,236 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Scenes/Birdie.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets PatrulhaColeta/background/PNG/1_game_background/layers/1.png" type="Texture" id=3]
+[ext_resource path="res://Assets PatrulhaColeta/background/PNG/1_game_background/layers/2.png" type="Texture" id=4]
+[ext_resource path="res://Assets PatrulhaColeta/background/PNG/1_game_background/layers/3.png" type="Texture" id=5]
+[ext_resource path="res://Assets PatrulhaColeta/background/PNG/1_game_background/layers/7.png" type="Texture" id=6]
+[ext_resource path="res://Assets PatrulhaColeta/background/PNG/1_game_background/layers/4.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/HUDLVL2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/sombras.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/topoAgua.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Net.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Pedra01.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Pedra02.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets PatrulhaColeta/objects/PNG/Let/Seaweed_1.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/Anchor.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets PatrulhaColeta/objects/PNG/Let/Chain.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/Pedraa.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Garra.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Trash01.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Prefabs/Transition_in.tscn" type="PackedScene" id=23]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6, 544 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1925.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 5.5, 170.5 )
+
+[node name="Level01" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="agua" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/agua"]
+position = Vector2( 959, 540 )
+texture = ExtResource( 3 )
+
+[node name="sombras" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 5 )
+motion_mirroring = Vector2( 1920, 0 )
+script = ExtResource( 11 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/sombras"]
+position = Vector2( 959, 540 )
+texture = ExtResource( 4 )
+
+[node name="topo da agua" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 1920, 0 )
+script = ExtResource( 12 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/topo da agua"]
+position = Vector2( 959, 540 )
+texture = ExtResource( 5 )
+
+[node name="matos do fundo" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/matos do fundo"]
+position = Vector2( 959, 540 )
+texture = ExtResource( 7 )
+
+[node name="chao" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/chao"]
+position = Vector2( 959, 540 )
+texture = ExtResource( 6 )
+
+[node name="BackgroundGeral" type="Node2D" parent="."]
+
+[node name="Limit" type="StaticBody2D" parent="BackgroundGeral"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="BackgroundGeral/Limit"]
+position = Vector2( -4, 534 )
+shape = SubResource( 1 )
+
+[node name="Limit2" type="StaticBody2D" parent="BackgroundGeral"]
+position = Vector2( 5246, 0 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="BackgroundGeral/Limit2"]
+position = Vector2( 831, 534 )
+shape = SubResource( 1 )
+
+[node name="floorLimit" type="StaticBody2D" parent="BackgroundGeral"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="BackgroundGeral/floorLimit"]
+position = Vector2( 1914, -5 )
+shape = SubResource( 2 )
+
+[node name="floorLimit3" type="StaticBody2D" parent="BackgroundGeral"]
+position = Vector2( 1918, 0 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="BackgroundGeral/floorLimit3"]
+position = Vector2( 1914, -5 )
+shape = SubResource( 2 )
+
+[node name="floorLimit4" type="StaticBody2D" parent="BackgroundGeral"]
+position = Vector2( 1918, 0 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="BackgroundGeral/floorLimit4"]
+position = Vector2( 1914, -5 )
+shape = SubResource( 2 )
+
+[node name="floorLimit6" type="StaticBody2D" parent="BackgroundGeral"]
+position = Vector2( 3651, 0 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="BackgroundGeral/floorLimit6"]
+position = Vector2( 1914, -5 )
+shape = SubResource( 2 )
+
+[node name="floorLimit7" type="StaticBody2D" parent="BackgroundGeral"]
+position = Vector2( 3651, 1083 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="BackgroundGeral/floorLimit7"]
+position = Vector2( 1914, -5 )
+shape = SubResource( 2 )
+
+[node name="floorLimit5" type="StaticBody2D" parent="BackgroundGeral"]
+position = Vector2( 1918, 1079 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="BackgroundGeral/floorLimit5"]
+position = Vector2( 1914, -5 )
+shape = SubResource( 2 )
+
+[node name="floorLimit2" type="StaticBody2D" parent="BackgroundGeral"]
+position = Vector2( -2, 1093 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="BackgroundGeral/floorLimit2"]
+position = Vector2( 1918, -24 )
+shape = SubResource( 2 )
+
+[node name="alga" type="Sprite" parent="BackgroundGeral"]
+position = Vector2( 1411, 934 )
+texture = ExtResource( 16 )
+
+[node name="Pedra01" parent="BackgroundGeral" instance=ExtResource( 14 )]
+position = Vector2( 1398, 996 )
+
+[node name="Pedra03" parent="BackgroundGeral" instance=ExtResource( 14 )]
+position = Vector2( 3526, 808 )
+
+[node name="Pedra04" parent="BackgroundGeral" instance=ExtResource( 14 )]
+position = Vector2( 2390, 770 )
+
+[node name="Sprite" parent="BackgroundGeral/Pedra04" index="0"]
+position = Vector2( 1, 2 )
+
+[node name="Pedra02" parent="BackgroundGeral" instance=ExtResource( 15 )]
+position = Vector2( 3195, 581 )
+
+[node name="chain" type="StaticBody2D" parent="BackgroundGeral"]
+
+[node name="chain" type="Sprite" parent="BackgroundGeral/chain"]
+position = Vector2( 4680, 108 )
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundGeral/chain"]
+position = Vector2( 4679.5, 108.5 )
+shape = SubResource( 3 )
+
+[node name="Anchor" parent="BackgroundGeral" instance=ExtResource( 17 )]
+position = Vector2( 4680, 409 )
+
+[node name="Pedraa" parent="BackgroundGeral" instance=ExtResource( 19 )]
+position = Vector2( 6341, 642 )
+scale = Vector2( 3, 3 )
+
+[node name="Pedra05" parent="BackgroundGeral" instance=ExtResource( 15 )]
+position = Vector2( 5927, 528 )
+scale = Vector2( 2.1, 2.1 )
+
+[node name="Trash01" parent="BackgroundGeral" instance=ExtResource( 21 )]
+position = Vector2( 1150, 756 )
+scale = Vector2( 3, 3 )
+
+[node name="Trash02" parent="BackgroundGeral" instance=ExtResource( 21 )]
+position = Vector2( 2134, 827 )
+rotation = 1.05236
+scale = Vector2( 3, 3 )
+
+[node name="Trash03" parent="BackgroundGeral" instance=ExtResource( 21 )]
+position = Vector2( 4565, 844 )
+rotation = 1.5402
+scale = Vector2( 3, 3 )
+
+[node name="Trashs" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1156, 457 )
+
+[node name="Garra" parent="Player" instance=ExtResource( 20 )]
+position = Vector2( -3.3999, 8.39996 )
+
+[node name="Net" parent="." instance=ExtResource( 13 )]
+position = Vector2( 460, 167 )
+scale = Vector2( 1, 1 )
+path = "res://Parte02/Scenes/Parte02.tscn"
+
+[node name="Birdie" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2930, 506 )
+
+[node name="HUDLVL2" parent="." instance=ExtResource( 8 )]
+
+[node name="Transition_in" parent="." instance=ExtResource( 23 )]
+
+[connection signal="body_entered" from="Net" to="Player/Garra" method="_on_Net_body_entered"]
+
+[editable path="BackgroundGeral/Pedra04"]
+[editable path="BackgroundGeral/Pedra05"]

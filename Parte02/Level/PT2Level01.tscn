@@ -1,0 +1,185 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Parte02/Scenes/Metal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets PatrulhaColeta/Parte02/Lixeiras.png" type="Texture" id=2]
+[ext_resource path="res://Parte02/Scripts/PT2Level01.gd" type="Script" id=3]
+[ext_resource path="res://Assets PatrulhaColeta/Roboto-Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Parte02/Scripts/score.gd" type="Script" id=5]
+[ext_resource path="res://Parte02/Scenes/Metal 2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Parte02/Scenes/Metal 3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefabs/Transition_in.tscn" type="PackedScene" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 101.5, 145.5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 120
+font_data = ExtResource( 4 )
+
+[node name="PT2Level01" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Object" parent="." instance=ExtResource( 6 )]
+position = Vector2( 501, 291 )
+
+[node name="Object2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1561, 293 )
+
+[node name="Object3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1027, 329 )
+
+[node name="fundo branco" type="ColorRect" parent="."]
+margin_left = 366.0
+margin_top = 541.0
+margin_right = 468.0
+margin_bottom = 644.0
+
+[node name="fundo branco 2" type="ColorRect" parent="."]
+margin_left = 1086.0
+margin_top = 543.0
+margin_right = 1188.0
+margin_bottom = 646.0
+
+[node name="LVidro" type="Area2D" parent="."]
+position = Vector2( 337, 503 )
+collision_layer = 64
+collision_mask = 128
+
+[node name="Sprite" type="Sprite" parent="LVidro"]
+position = Vector2( 51, 106 )
+texture = ExtResource( 2 )
+hframes = 5
+vframes = 2
+frame = 5
+
+[node name="vidro" type="CollisionShape2D" parent="LVidro"]
+position = Vector2( 96, 87.5 )
+shape = SubResource( 1 )
+
+[node name="LPlastico" type="Area2D" parent="."]
+position = Vector2( 575, 503 )
+collision_layer = 64
+collision_mask = 128
+
+[node name="Sprite" type="Sprite" parent="LPlastico"]
+position = Vector2( 107, 105 )
+texture = ExtResource( 2 )
+hframes = 9
+vframes = 2
+frame = 11
+
+[node name="metal" type="CollisionShape2D" parent="LPlastico"]
+position = Vector2( 96, 87.5 )
+shape = SubResource( 1 )
+
+[node name="LOrganico" type="Area2D" parent="."]
+position = Vector2( 817, 503 )
+collision_layer = 64
+collision_mask = 128
+
+[node name="Sprite" type="Sprite" parent="LOrganico"]
+position = Vector2( 75, 105 )
+texture = ExtResource( 2 )
+hframes = 8
+vframes = 2
+frame = 12
+
+[node name="organico" type="CollisionShape2D" parent="LOrganico"]
+position = Vector2( 96, 87.5 )
+shape = SubResource( 1 )
+
+[node name="LPapel" type="Area2D" parent="."]
+position = Vector2( 1057, 503 )
+collision_layer = 64
+collision_mask = 128
+
+[node name="Sprite" type="Sprite" parent="LPapel"]
+position = Vector2( 95, 105 )
+texture = ExtResource( 2 )
+hframes = 9
+vframes = 2
+frame = 15
+
+[node name="papel" type="CollisionShape2D" parent="LPapel"]
+position = Vector2( 96, 87.5 )
+shape = SubResource( 1 )
+
+[node name="LMetal" type="Area2D" parent="."]
+position = Vector2( 1297, 503 )
+collision_layer = 64
+collision_mask = 128
+
+[node name="Sprite" type="Sprite" parent="LMetal"]
+position = Vector2( 152, 105 )
+texture = ExtResource( 2 )
+hframes = 5
+vframes = 2
+frame = 9
+
+[node name="plastico" type="CollisionShape2D" parent="LMetal"]
+position = Vector2( 96, 87.5 )
+shape = SubResource( 1 )
+
+[node name="HUD 2" type="CanvasLayer" parent="."]
+
+[node name="texture" type="TextureRect" parent="HUD 2"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="score" type="Label" parent="HUD 2"]
+margin_left = 460.0
+margin_top = 924.0
+margin_right = 529.0
+margin_bottom = 1066.0
+custom_colors/font_outline_modulate = Color( 0.247059, 0.247059, 0.454902, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 2
+valign = 1
+script = ExtResource( 5 )
+
+[node name="pontos" type="Label" parent="HUD 2"]
+margin_left = 31.0
+margin_top = 916.0
+margin_right = 448.0
+margin_bottom = 1058.0
+custom_colors/font_outline_modulate = Color( 0.247059, 0.247059, 0.454902, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Pontos:"
+align = 2
+valign = 1
+
+[node name="Error" type="Label" parent="HUD 2"]
+visible = false
+margin_left = 677.0
+margin_top = 783.0
+margin_right = 1572.0
+margin_bottom = 1070.0
+custom_colors/font_color = Color( 0.831373, 0.313726, 0.313726, 1 )
+custom_colors/font_outline_modulate = Color( 0.247059, 0.247059, 0.454902, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Ops! Você deve separar o lixo!"
+autowrap = true
+
+[node name="pontos2" type="Label" parent="HUD 2"]
+margin_left = 75.0
+margin_top = 8.0
+margin_right = 1816.0
+margin_bottom = 150.0
+custom_colors/font_outline_modulate = Color( 0.247059, 0.247059, 0.454902, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Separe o lixo na lixeira correta!"
+align = 2
+valign = 1
+
+[node name="Transition_in" parent="." instance=ExtResource( 8 )]
+
+[connection signal="area_entered" from="LVidro" to="." method="_on_LVidro_area_entered"]
+[connection signal="area_entered" from="LPlastico" to="." method="_on_LPlastico_area_entered"]
+[connection signal="area_entered" from="LOrganico" to="." method="_on_LOrganico_area_entered"]
+[connection signal="area_entered" from="LPapel" to="." method="_on_LPapel_area_entered"]
+[connection signal="area_entered" from="LMetal" to="." method="_on_LMetal_area_entered"]

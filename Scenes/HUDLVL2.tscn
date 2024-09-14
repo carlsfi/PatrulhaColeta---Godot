@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets PatrulhaColeta/objects/health.png" type="Texture" id=1]
+[ext_resource path="res://Assets PatrulhaColeta/Roboto-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/Score.gd" type="Script" id=3]
+[ext_resource path="res://Assets PatrulhaColeta/lixos/kindpng_1726872.png" type="Texture" id=4]
+[ext_resource path="res://Assets PatrulhaColeta/objects/PNG/600px-Red_x.svg.png" type="Texture" id=6]
+[ext_resource path="res://Assets PatrulhaColeta/objects/PNG/checkmark-symbol-png-background-12.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/HUD.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 2 )
+
+[node name="HUDLVL2" type="CanvasLayer"]
+script = ExtResource( 8 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -887.0
+
+[node name="Coletas" type="Control" parent="HBoxContainer"]
+margin_right = 958.0
+margin_bottom = 193.0
+size_flags_horizontal = 3
+
+[node name="icon" type="TextureRect" parent="HBoxContainer/Coletas"]
+margin_left = 22.0
+margin_top = 870.0
+margin_right = 192.0
+margin_bottom = 1040.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="score" type="Label" parent="HBoxContainer/Coletas"]
+margin_left = 230.0
+margin_top = 905.0
+margin_right = 299.0
+margin_bottom = 1047.0
+custom_colors/font_color = Color( 0.247059, 0.247059, 0.454902, 1 )
+custom_colors/font_outline_modulate = Color( 0.247059, 0.247059, 0.454902, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 2
+valign = 1
+script = ExtResource( 3 )
+
+[node name="correct" type="TextureRect" parent="HBoxContainer/Coletas"]
+margin_left = 303.0
+margin_top = 899.0
+margin_right = 430.0
+margin_bottom = 1028.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="incorrect" type="TextureRect" parent="HBoxContainer/Coletas"]
+margin_left = 314.0
+margin_top = 925.0
+margin_right = 413.0
+margin_bottom = 1024.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="lifes" type="Control" parent="HBoxContainer"]
+margin_left = 962.0
+margin_right = 1920.0
+margin_bottom = 193.0
+size_flags_horizontal = 3
+
+[node name="life1" type="TextureRect" parent="HBoxContainer/lifes"]
+margin_left = -931.0
+margin_top = 19.0
+margin_right = -825.0
+margin_bottom = 126.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+
+[node name="life2" type="TextureRect" parent="HBoxContainer/lifes"]
+margin_left = -819.0
+margin_top = 19.0
+margin_right = -713.0
+margin_bottom = 126.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+
+[node name="life3" type="TextureRect" parent="HBoxContainer/lifes"]
+margin_left = -705.0
+margin_top = 19.0
+margin_right = -599.0
+margin_bottom = 126.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1

@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets PatrulhaColeta/objects/PNG/Bonus/Small-bomb.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends enemyBase
+
+func _process(_delta: float) -> void:
+	_set_animation()
+	motion.y = 0
+	if $ray_wall.is_colliding():
+		print(\"colidindo\")
+		$ray_wall.scale.x *= -1
+		move_direction *= -1
+		$anim.play(\"run\")
+"
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 39.0128
+
+[node name="Enemy" type="KinematicBody2D"]
+collision_layer = 2
+script = SubResource( 2 )
+
+[node name="texture" type="Sprite" parent="."]
+position = Vector2( 1.90735e-06, -7.62939e-06 )
+scale = Vector2( 0.536232, 0.536232 )
+texture = ExtResource( 2 )
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="ray_wall" type="RayCast2D" parent="."]
+cast_to = Vector2( -51, 0 )

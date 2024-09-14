@@ -1,0 +1,239 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Parte02/Scripts/score.gd" type="Script" id=1]
+[ext_resource path="res://Parte02/Scripts/Parte02-2.gd" type="Script" id=2]
+[ext_resource path="res://Assets PatrulhaColeta/Roboto-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Parte02/Scenes/Papel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Parte02/Scenes/Metal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Parte02/Scenes/Metal 2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets PatrulhaColeta/Parte02/hover.png" type="Texture" id=7]
+[ext_resource path="res://Assets PatrulhaColeta/Parte02/background2.png" type="Texture" id=8]
+[ext_resource path="res://Assets PatrulhaColeta/Parte02/pressed.png" type="Texture" id=9]
+[ext_resource path="res://Assets PatrulhaColeta/Parte02/liiiixooo - Edited (2).png" type="Texture" id=10]
+[ext_resource path="res://Assets PatrulhaColeta/Parte02/normal.png" type="Texture" id=11]
+[ext_resource path="res://Parte02/Scenes/Papel2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Parte02/Scenes/Papel3.tscn" type="PackedScene" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 88.5, 124.5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 120
+font_data = ExtResource( 3 )
+
+[node name="Parte02" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1001, 576 )
+scale = Vector2( 0.45475, 0.45475 )
+texture = ExtResource( 8 )
+
+[node name="Metal 1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 493, 241 )
+
+[node name="Metal 2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 937, 237 )
+
+[node name="Papel 1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1350, 269 )
+scale = Vector2( 0.788, 0.788 )
+
+[node name="Papel 2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1718, 227 )
+scale = Vector2( 0.788, 0.788 )
+
+[node name="Papel 3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 355, 284 )
+scale = Vector2( 0.788482, 0.788482 )
+
+[node name="fundo branco" type="ColorRect" parent="."]
+margin_left = 327.0
+margin_top = 508.0
+margin_right = 429.0
+margin_bottom = 611.0
+
+[node name="fundo branco2" type="ColorRect" parent="."]
+margin_left = 514.0
+margin_top = 508.0
+margin_right = 616.0
+margin_bottom = 611.0
+
+[node name="fundo branco3" type="ColorRect" parent="."]
+margin_left = 708.0
+margin_top = 508.0
+margin_right = 810.0
+margin_bottom = 611.0
+
+[node name="fundo branco4" type="ColorRect" parent="."]
+margin_left = 897.0
+margin_top = 508.0
+margin_right = 999.0
+margin_bottom = 611.0
+
+[node name="fundo branco5" type="ColorRect" parent="."]
+margin_left = 1100.0
+margin_top = 508.0
+margin_right = 1202.0
+margin_bottom = 611.0
+
+[node name="fundo branco6" type="ColorRect" parent="."]
+margin_left = 1288.0
+margin_top = 508.0
+margin_right = 1390.0
+margin_bottom = 611.0
+
+[node name="fundo branco7" type="ColorRect" parent="."]
+margin_left = 1481.0
+margin_top = 508.0
+margin_right = 1583.0
+margin_bottom = 611.0
+
+[node name="LixeirasJuntas" type="Sprite" parent="."]
+position = Vector2( 955, 564 )
+scale = Vector2( 0.937505, 0.937505 )
+texture = ExtResource( 10 )
+
+[node name="LVidro" type="Area2D" parent="."]
+position = Vector2( 513, 472 )
+collision_layer = 64
+collision_mask = 128
+
+[node name="vidro" type="CollisionShape2D" parent="LVidro"]
+position = Vector2( -136.5, 90.5 )
+shape = SubResource( 1 )
+
+[node name="LPlastico" type="Area2D" parent="."]
+position = Vector2( 1026, 483 )
+collision_layer = 64
+collision_mask = 128
+
+[node name="metal" type="CollisionShape2D" parent="LPlastico"]
+position = Vector2( -73, 78 )
+shape = SubResource( 1 )
+
+[node name="LOrganico" type="Area2D" parent="."]
+position = Vector2( 1230, 481 )
+collision_layer = 64
+collision_mask = 128
+
+[node name="organico" type="CollisionShape2D" parent="LOrganico"]
+position = Vector2( 303, 80 )
+shape = SubResource( 1 )
+
+[node name="LPapel" type="Area2D" parent="."]
+position = Vector2( 199, 482 )
+collision_layer = 64
+collision_mask = 128
+
+[node name="papel" type="CollisionShape2D" parent="LPapel"]
+position = Vector2( 370, 80 )
+shape = SubResource( 1 )
+
+[node name="LMetal" type="Area2D" parent="."]
+position = Vector2( 1632, 482 )
+collision_layer = 64
+collision_mask = 128
+
+[node name="plastico" type="CollisionShape2D" parent="LMetal"]
+position = Vector2( -486, 80 )
+shape = SubResource( 1 )
+
+[node name="LPerigoso" type="Area2D" parent="."]
+position = Vector2( 1825, 482 )
+collision_layer = 64
+collision_mask = 128
+
+[node name="plastico" type="CollisionShape2D" parent="LPerigoso"]
+position = Vector2( -486, 80 )
+shape = SubResource( 1 )
+
+[node name="LNaoReciclavel" type="Area2D" parent="."]
+position = Vector2( 1825, 482 )
+collision_layer = 64
+collision_mask = 128
+
+[node name="plastico" type="CollisionShape2D" parent="LNaoReciclavel"]
+position = Vector2( -1064, 80 )
+shape = SubResource( 1 )
+
+[node name="HUD 2" type="CanvasLayer" parent="."]
+
+[node name="texture" type="TextureRect" parent="HUD 2"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="score" type="Label" parent="HUD 2"]
+margin_left = 460.0
+margin_top = 924.0
+margin_right = 529.0
+margin_bottom = 1066.0
+custom_colors/font_outline_modulate = Color( 0.247059, 0.247059, 0.454902, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 2
+valign = 1
+script = ExtResource( 1 )
+
+[node name="pontos" type="Label" parent="HUD 2"]
+margin_left = 31.0
+margin_top = 916.0
+margin_right = 448.0
+margin_bottom = 1058.0
+custom_colors/font_outline_modulate = Color( 0.247059, 0.247059, 0.454902, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Pontos:"
+align = 2
+valign = 1
+
+[node name="Error" type="Label" parent="HUD 2"]
+visible = false
+margin_left = 673.0
+margin_top = 751.0
+margin_right = 1568.0
+margin_bottom = 1038.0
+custom_colors/font_color = Color( 0.831373, 0.313726, 0.313726, 1 )
+custom_colors/font_outline_modulate = Color( 0.247059, 0.247059, 0.454902, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Ops! Você deve separar o lixo!"
+autowrap = true
+
+[node name="pontos2" type="Label" parent="HUD 2"]
+margin_left = 75.0
+margin_top = 8.0
+margin_right = 1816.0
+margin_bottom = 150.0
+custom_colors/font_outline_modulate = Color( 0.247059, 0.247059, 0.454902, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Separe o lixo na lixeira correta!"
+align = 2
+valign = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 1565.0
+margin_top = 790.0
+margin_right = 1830.0
+margin_bottom = 1055.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 7 )
+expand = true
+
+[connection signal="area_entered" from="LVidro" to="." method="_on_LVidro_area_entered"]
+[connection signal="area_entered" from="LPlastico" to="." method="_on_LPlastico_area_entered"]
+[connection signal="area_entered" from="LOrganico" to="." method="_on_LOrganico_area_entered"]
+[connection signal="area_entered" from="LPapel" to="." method="_on_LPapel_area_entered"]
+[connection signal="area_entered" from="LMetal" to="." method="_on_LMetal_area_entered"]
+[connection signal="area_entered" from="LPerigoso" to="." method="_on_LPerigoso_area_entered"]
+[connection signal="area_entered" from="LNaoReciclavel" to="." method="_on_LNaoReciclavel_area_entered"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+
+[editable path="Metal 1"]
+[editable path="Metal 2"]
+[editable path="Papel 1"]
+[editable path="Papel 2"]
+[editable path="Papel 3"]
